@@ -1,3 +1,53 @@
-h1 {
-  font-size: 2rem;
+:root {
+  --background-color: darkgrey;
+  --title-size: 24px;
+  --text-size: 16px;
+  --subtitle-size: 18px;
+  --nav-link-color: black;
+  --nav-link-padding: 15px;
+  --nav-link-hover-color: lightgrey;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+nav h1 {
+  font-size: var(--title-size);
+  color: white;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  padding: var(--nav-link-padding);
+  display: block;
+}
+
+nav a:hover {
+  background-color: var(--nav-link-hover-color);
+  border-radius: 4px;
 }
