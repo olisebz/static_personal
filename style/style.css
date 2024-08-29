@@ -1,31 +1,30 @@
 :root {
-  --background-color: darkgrey;
-  --title-size: 24px;
-  --text-size: 16px;
-  --subtitle-size: 18px;
-  --nav-link-color: black;
-  --nav-link-padding: 15px;
-  --nav-link-hover-color: lightgrey;
+  --background-color: #f8f8f8;
+  --text-color: #333;
+  --nav-link-color: #007aff;
+  --nav-link-padding: 20px;
+  --nav-link-hover-color: #f0f0f5;
+  --burger-color: #333;
+  --nav-background-color: white;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 nav {
   display: flex;
   align-items: center;
-  background-color: var(--background-color);
-  padding: 10px 20px;
   justify-content: space-between;
-}
-
-nav h1 {
-  font-size: var(--title-size);
-  color: white;
-  margin: 0;
+  padding: 15px 20px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 nav ul {
@@ -33,10 +32,12 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 10px;
+  flex-direction: row;
+  position: static;
+  background-color: transparent;
 }
 
-nav li {
+nav ul li {
   margin: 0;
 }
 
@@ -45,9 +46,54 @@ nav a {
   text-decoration: none;
   padding: var(--nav-link-padding);
   display: block;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 400;
 }
 
 nav a:hover {
   background-color: var(--nav-link-hover-color);
-  border-radius: 10px;
+  border-radius: 4px;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.burger-menu .bar {
+  width: 25px;
+  height: 2px;
+  background-color: var(--burger-color);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-background-color);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+  }
+
+  nav ul.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  nav h1 {
+    font-size: 20px;
+  }
 }
