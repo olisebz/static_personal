@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function toggleMenu() {
     navLinks.classList.toggle('active');
-    burgerMenu.classList.toggle('active');
   }
 
   burgerMenu.addEventListener('click', toggleMenu);
