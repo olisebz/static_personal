@@ -1,11 +1,11 @@
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --background-color: #f8f8f8;
+  --text-color: #333;
   --nav-link-color: #007aff;
   --nav-link-padding: 20px;
   --nav-link-hover-color: #f0f0f5;
-  --burger-color: #000000;
-  --nav-background-color: #ffffff;
+  --burger-color: #333;
+  --nav-background-color: white;
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -15,9 +15,6 @@ body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 nav {
@@ -25,16 +22,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  background-color: var(--nav-background-color);
+  background-color: var(--background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
-}
-
-nav h1 {
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--text-color);
-  margin: 0;
 }
 
 nav ul {
@@ -43,6 +33,8 @@ nav ul {
   padding: 0;
   display: flex;
   flex-direction: row;
+  position: static;
+  background-color: transparent;
 }
 
 nav ul li {
@@ -54,13 +46,13 @@ nav a {
   text-decoration: none;
   padding: var(--nav-link-padding);
   display: block;
-  transition: color 0.3s, background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   font-weight: 400;
 }
 
 nav a:hover {
   background-color: var(--nav-link-hover-color);
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .burger-menu {
@@ -75,60 +67,6 @@ nav a:hover {
   height: 2px;
   background-color: var(--burger-color);
   transition: transform 0.3s, opacity 0.3s;
-}
-
-.landing {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: var(--background-color);
-}
-
-.landing h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-.landing h3 {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 40px;
-  color: #666;
-}
-
-.introduction-text h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-.introduction-text p,
-.introduction-text ul {
-  font-size: 16px;
-  color: #333;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.introduction-text ul {
-  padding-left: 20px;
-  list-style: none;
-}
-
-.introduction-text ul li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 15px;
-}
-
-.introduction-text ul li:before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--nav-link-color);
 }
 
 @media (max-width: 768px) {
@@ -158,25 +96,95 @@ nav a:hover {
   nav h1 {
     font-size: 20px;
   }
+}
 
-  .landing {
-    padding: 60px 10px;
-  }
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-  .landing h2 {
-    font-size: 28px;
-  }
+h2, h3 {
+  margin: 10px 0;
+  font-weight: 300;
+}
 
-  .landing h3 {
-    font-size: 20px;
-  }
+.introduction img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .introduction-text h4 {
-    font-size: 18px;
-  }
+.introduction-text {
+  max-width: 600px;
+  margin: 20px auto;
+}
 
-  .introduction-text p,
-  .introduction-text ul {
-    font-size: 14px;
-  }
+.introduction-text h4 {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.introduction-text p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.introduction-text ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.introduction-text ul li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--text-color);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.introduction-text ul li:before {
+  content: '–';
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.introduction-text ul li .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.introduction-text ul li .tags button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007aff;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.introduction-text ul li .tags button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+.introduction-text ul li .tags button:active {
+  transform: translateY(0);
 }
