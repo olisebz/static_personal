@@ -3,10 +3,19 @@
   --text-color: #333;
   --nav-link-color: #007aff;
   --nav-link-padding: 20px;
-  --nav-link-hover-color: #f0f0f5;
+  --nav-link-hover-color: #e0e0e5;
   --burger-color: #333;
   --nav-background-color: white;
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --background-color: #1c1c1e;
+  --text-color: #f5f5f7;
+  --nav-link-color: #0a84ff;
+  --nav-link-hover-color: #2c2c2e;
+  --burger-color: #f5f5f7;
+  --nav-background-color: #2c2c2e;
 }
 
 body {
@@ -22,8 +31,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  background-color: var(--background-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--nav-background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
@@ -79,7 +88,7 @@ nav a:hover {
     width: 100%;
     background-color: var(--nav-background-color);
     border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transition: opacity 0.3s, top 0.3s;
   }
@@ -118,7 +127,7 @@ h2, h3 {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .introduction-text {
@@ -172,7 +181,7 @@ h2, h3 {
   padding: 5px 10px;
   border: none;
   border-radius: 20px;
-  background-color: #007aff;
+  background-color: var(--nav-link-color);
   color: white;
   font-size: 14px;
   font-weight: 400;
@@ -181,7 +190,7 @@ h2, h3 {
 }
 
 .introduction-text ul li .tags button:hover {
-  background-color: #005bb5;
+  background-color: #0a84ff; 
   transform: translateY(-2px);
 }
 
