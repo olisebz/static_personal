@@ -30,6 +30,11 @@
   --toggle-background-light: #3a3a3c;
   --toggle-background-dark: #0a84ff;
   --toggle-circle-background-dark: #0a84ff;
+
+  --footer-background-color: #1c1c1e;
+  --footer-text-color: #f5f5f7;
+  --footer-link-color: #0a84ff;
+  --footer-link-hover-color: #007aff;
 }
 
 html, body {
@@ -260,8 +265,8 @@ h2, h3 {
 }
 
 footer {
-  background-color: #ffffff;
-  color: #333;
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
   text-align: center;
   padding: 40px 20px;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
@@ -276,7 +281,7 @@ footer .footer-content {
 footer p {
   font-size: 14px;
   margin: 10px 0;
-  color: var(--text-color);
+  color: var(--footer-text-color);
 }
 
 footer ul {
@@ -293,14 +298,14 @@ footer ul li {
 }
 
 footer a {
-  color: var(--nav-link-color);
+  color: var(--footer-link-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s, text-decoration 0.3s;
 }
 
 footer a:hover {
-  color: var(--nav-link-hover-color);
+  color: var(--footer-link-hover-color);
   text-decoration: underline;
 }
 
